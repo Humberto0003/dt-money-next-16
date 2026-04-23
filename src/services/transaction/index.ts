@@ -14,8 +14,28 @@ export async function getTransactions() {
 export async function createTransaction(transaction: ITransaction) {
     try {
         const response = await api.post<ITransaction>('/transactions', transaction);
-    } catch (error) {
+        return response.data;
+      } catch (error) {
         console.error("Error creating transaction:", error);
         throw error;
     }
+}
+
+export async function deleteTransaction(id: string) {
+    try {
+        await api.delete(`/transactions/${id}`);
+    } catch (error) {
+        console.error("Error deleting transaction:", error);
+        throw error;
+    }
+}
+
+export async function updateTransaction(transaction: ITransaction) {
+  try {
+    const response = await api.put(`/transactions/${transaction.id}`, transaction);
+    return response.data;
+  } catch (error) {
+    console.error("Error updating transaction:", error);
+    throw error;
+  }
 }
