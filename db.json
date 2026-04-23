@@ -1,0 +1,13 @@
+{
+  "transactions": [
+    {
+      "id": "a505xinorrY",
+      "title": "Coisas",
+      "price": 105,
+      "category": "viagem",
+      "type": "INCOME",
+      "data": "2026-04-23T02:00:41.827Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

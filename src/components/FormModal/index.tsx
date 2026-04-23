@@ -54,7 +54,7 @@ export const FormModal = ({
       title: data.title,
       price: data.price,
       category: data.category,
-      type: data.type,
+      type: data.type as TransactionType,
       data: transaction?.data ?? new Date(),
     };
 

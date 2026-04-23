@@ -17,7 +17,7 @@ export default function Home() {
   const { mutateAsync: deleteTransaction } = useTransaction.Delete();
   const { mutateAsync: updateTransaction } = useTransaction.Update();
 
-  // 🔥 DELETE
+  
   const handleDelete = (id: string) => {
     const confirm = window.confirm("Deseja excluir essa transação?");
     if (confirm) {
@@ -25,13 +25,13 @@ export default function Home() {
     }
   };
 
-  // 🔥 EDIT
+ 
   const handleEdit = (transaction: ITransaction) => {
     setSelectedTransaction(transaction);
     setIsFormModalOpen(true);
   };
 
-  // 🔥 CREATE + UPDATE (INTELIGENTE)
+ 
   const handleSubmitTransaction = async (transaction: ITransaction) => {
     if (selectedTransaction) {
       await updateTransaction(transaction);
@@ -42,7 +42,7 @@ export default function Home() {
     setSelectedTransaction(null);
   };
 
-  // 🔥 TOTAL
+  
   const calculaTotal = useMemo(() => {
     const transactions = transactionsData ?? [];
     const totals = transactions.reduce<TotalCard>((acc, transaction) => {
